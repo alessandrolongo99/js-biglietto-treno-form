@@ -9,15 +9,24 @@
 </head>
 
 <body>
-    <h1>Biglietto treno</h1>
+    <h1>Calcola il prezzo del tuo biglietto</h1>
 
-    <label for="km">Quanti chilometri vuoi percorrere?</label>
+    <label for="name">Nome Cognome</label>
+    <input type="text" id="name" name="name">
+
+    <label for="km">km da percorrere</label>
     <input type="number" id="km" name="km">
 
-    <label for="age">Quanti anni hai?</label>
-    <input type="number" id="age" name="age">
+    <label for="age">Fascia d'età</label>
+    <select name="age" id="age">
+        <option value="">Maggiorenne</option>
+        <option value="1">Minorenne</option>
+        <option value="2">Over 65</option>
+    </select>
 
-    <button id="btn">Invio</button>
+    <button id="submit">Genera</button>
+    
+    <button id="cancel">Annulla</button>
 
     <script src="./js/main.js"></script>
 </body>

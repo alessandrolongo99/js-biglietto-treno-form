@@ -1,11 +1,16 @@
 let km = 0;
 let age = 0;
+let myName = 0;
 const tax = 0.26;
 
-const btn = document.getElementById('btn');
+const submit = document.getElementById('submit');
+const cancel = document.getElementById('cancel');
 
-btn.addEventListener('click',
+submit.addEventListener('click',
     function () {
+        myName = document.getElementById('name').value;
+        console.log(myName);
+
         km = document.getElementById('km').value;
         console.log(km);
 
@@ -14,12 +19,20 @@ btn.addEventListener('click',
 
         let price = km * tax;
 
-        if (age < 18) {
+        if (age == 1) {
             price -= ((price / 100) * 15);
-        } else if (age > 65) {
+        } else if (age == 2) {
             price -= ((price / 100) * 35);
         }
 
         console.log(`il prezzo e' di ${price.toFixed(2)} euro`);
+    }
+);
+
+cancel.addEventListener('click',
+    function(){
+        myName = document.getElementById('name').value = null;
+        km = document.getElementById('km').value = null;
+        age = document.getElementById('age').value = null;
     }
 );
