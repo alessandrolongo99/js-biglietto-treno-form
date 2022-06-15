@@ -25,7 +25,13 @@ submit.addEventListener('click',
             price -= ((price / 100) * 35);
         }
 
-        console.log(`il prezzo e' di ${price.toFixed(2)} euro`);
+        let cab = Math.floor((Math.random() * 10) + 1);
+        let cp = Math.floor(Math.random() * 10000);
+
+        document.getElementById('passenger-name').innerHTML = myName;
+        document.getElementById('passenger-cab').innerHTML = cab;
+        document.getElementById('passenger-cp').innerHTML = cp;
+        document.getElementById('ticket').innerHTML = price.toFixed(2) + '€';
     }
 );
 
@@ -34,5 +40,10 @@ cancel.addEventListener('click',
         myName = document.getElementById('name').value = null;
         km = document.getElementById('km').value = null;
         age = document.getElementById('age').value = null;
+
+        document.getElementById('passenger-name').innerHTML = null;
+        document.getElementById('passenger-cab').innerHTML = null;
+        document.getElementById('passenger-cp').innerHTML = null;
+        document.getElementById('ticket').innerHTML = null;
     }
 );
